@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="main">
+        <div class="details-section">
+            <div class="input-section">
+                <input type="number" placeholder="Bill Amount" id="input-billAmount" onkeyup="onBillAmountChange()" />
+                <input type="number" placeholder="Cash Given" id="input-cashGiven" />
+            </div>
+            <img src="images/delete.svg" alt="delete" class="icon delete" id="btn-delete" />
+        </div>
+
+        <button id="btn-calculate">Calculate</button>
+        <div id="output"></div>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
