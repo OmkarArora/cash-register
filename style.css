@@ -20,7 +20,7 @@ body {
   padding: 1rem;
   background-color: var(--primary-color);
   border-bottom-right-radius: 30%;
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
   display: flex;
   align-items: center;
   width: 100%;
@@ -147,6 +147,22 @@ button {
 .section-output {
   height: 100%;
   overflow-y: scroll;
+}
+
+.section-disclaimer {
+  text-align: center;
+  padding: 1rem 0rem 0rem 0rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+.section-disclaimer h3 {
+  margin-bottom: 0px;
+}
+
+.section-disclaimer p {
+  margin-top: 5px;
+  font-style: italic;
 }
 
 .footer ul {
