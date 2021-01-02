@@ -1,6 +1,36 @@
+:root {
+  --primary-color: #34d399;
+  --secondary-color: #d1fae5;
+  --danger-color: #ef4444;
+  --success-color: #047857;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  font-family: "Courier New", Courier, monospace;
+  background-color: var(--secondary-color);
+}
+
+.header {
+  padding: 1rem;
+  background-color: var(--primary-color);
+  border-bottom-right-radius: 30%;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.header .heading {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin-left: 1rem;
 }
 
 .main {
@@ -12,8 +42,16 @@ body {
 }
 
 button {
-  width: 50%;
   margin-top: 1rem;
+  font-family: inherit;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 1.3rem;
+  padding: 0.4rem 0.8rem;
+  background-color: var(--primary-color);
+  border: none;
+  outline: none;
+  border-radius: 1rem;
 }
 
 #input-cashGiven {
@@ -28,15 +66,15 @@ button {
 }
 
 .input-section {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
+  width: min-content;
 }
 
 .input-section input {
   margin: 0.5rem;
   padding: 0.5rem;
   font-size: 1.1rem;
+  font-family: inherit;
+  font-weight: bold;
 }
 
 .icon {
@@ -45,6 +83,98 @@ button {
 }
 
 .icon.delete {
-  /* margin-top: 1.2rem; */
+  /* display: none; */
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+.icon.cashRegister {
+  width: 5rem;
+}
+
+.section-output {
+  margin-top: 1.3rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.section-output table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#btn-calculate {
   display: none;
+}
+
+.output-text {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.output-text.success {
+  color: var(--success-color);
+}
+
+.output-text.danger {
+  color: var(--danger-color);
+}
+
+.list-item-inline {
+  display: inline;
+}
+
+.list-non-bullet {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.footer {
+  background-color: var(--primary-color);
+  padding: 2rem 1rem 1rem 1rem;
+  text-align: center;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+.section-output {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.footer ul {
+  padding-inline-start: 0px;
+}
+
+.footer li {
+  padding-top: 1rem;
+}
+
+.footer .link {
+  color: white;
+}
+
+.footer .footer-header {
+  font-weight: bold;
+  font-size: large;
+}
+
+.footer .social-icon {
+  width: 1.5rem;
+  padding-right: 0.5rem;
+  vertical-align: baseline;
+}
+
+@media (max-height: 700px) {
+  .footer {
+    position: unset;
+    margin-top: 2rem;
+  }
 }
