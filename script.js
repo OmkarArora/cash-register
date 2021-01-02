@@ -4,16 +4,20 @@ let btnCalc = document.querySelector("#btn-calculate");
 let output = document.querySelector("#output");
 let btnDelete = document.querySelector("#btn-delete");
 
-let availableNotes = [2000, 500, 200, 100, 20, 5, 1];
-let notes = { 2000: 0, 500: 0, 200: 0, 100: 0, 20: 0, 5: 0, 1: 0 };
+let availableNotes = [2000, 500, 200, 100, 20, 10, 5, 1];
+let notes = { 2000: 0, 500: 0, 200: 0, 100: 0, 20: 0, 10: 0, 5: 0, 1: 0 };
 
-// Reset function 
+// Reset function
 function reset() {
-  notes = { 2000: 0, 500: 0, 200: 0, 100: 0, 20: 0, 5: 0, 1: 0 };
+  resetNotes();
   output.innerHTML = "";
   inputBill.value = "";
   inputCashGiven.value = "";
   onBillAmountChange();
+}
+
+function resetNotes() {
+  notes = { 2000: 0, 500: 0, 200: 0, 100: 0, 10: 0, 20: 0, 5: 0, 1: 0 };
 }
 
 // Main Logic Function
@@ -37,22 +41,20 @@ function calculateNotes() {
       }
     });
     output.innerHTML = `<h1>${JSON.stringify(notes)}</h1>`;
-    console.log(notes)
+    console.log(notes);
   }
 }
 
-function onBillAmountChange(){
-    if(inputBill.value === ""){
-        inputCashGiven.style.display = "none";
-        btnDelete.style.display = "none";
-    }
-    else{
-        inputCashGiven.style.display = "unset";
-        btnDelete.style.display = "unset";
-
-    }
+function onBillAmountChange() {
+  resetNotes();
+  if (inputBill.value === "") {
+    inputCashGiven.style.display = "none";
+    btnDelete.style.display = "none";
+  } else {
+    inputCashGiven.style.display = "unset";
+    btnDelete.style.display = "unset";
+  }
 }
 // Event handler
 btnCalc.addEventListener("click", () => calculateNotes());
 btnDelete.addEventListener("click", () => reset());
-
