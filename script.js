@@ -45,7 +45,7 @@ function calculateNotes() {
   let cash = parseInt(inputCashGiven.value);
   let returnAmount = cash - bill;
   if (returnAmount < 0) {
-    output.innerHTML = `<p class="output-text danger">Insufficient cash</p>`;
+    output.innerHTML = `<p class="output-text danger">Collect more &#164;${-(returnAmount)} from customer</p>`;
   } else if (returnAmount === 0) {
     output.innerHTML = `<p class="output-text success">Exact Change</p>`;
   } else {
